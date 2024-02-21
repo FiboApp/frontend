@@ -22,6 +22,9 @@ DerivedData
 *.xcuserstate
 ios/.xcode.env.local
 
+ios/Podfile.lock
+Gemfile.lock
+ios/frontend.xcworkspace
 # Android/IntelliJ
 #
 build/
@@ -39,6 +42,7 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
+package-lock.json
 
 # fastlane
 #
