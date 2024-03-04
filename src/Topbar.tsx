@@ -1,17 +1,22 @@
+import { Icon, Button } from '@ui-kitten/components';
 import React from 'react';
-import { View, Text, StyleSheet,Button, Image, TouchableHighlight} from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableHighlight } from 'react-native';
+import { Mode } from 'react-native-big-calendar';
 
-const Topbar = ({changeCalendarView}) => {
+const Topbar = ({ changeCalendarView }: { changeCalendarView: (mode: Mode) => void }) => {
   return (
     <View style={styles.container}>
-      <View style={[styles.leftElement, {flexDirection: 'row'}]}>
-        <Button onPress={() => changeCalendarView(1)} title="1 day"/>
-        <Button onPress={() => changeCalendarView(3)} title="3 day"/>
-        <Button onPress={() => changeCalendarView(7)} title="7 day"/>
+      <View style={[styles.leftElement, { flexDirection: 'row' }]}>
+        <TouchableHighlight>
+          <Icon style={styles.menuIcon} name='menu-outline'/>
+        </TouchableHighlight>
+        {/* <Button onPress={() => changeCalendarView("day")} title="day" /> */}
+        {/* <Button onPress={() => changeCalendarView("3days")} title="3days" /> */}
+        {/* <Button onPress={() => changeCalendarView("week")} title="week" /> */}
 
       </View>
       <View style={styles.rightElement}>
-        <Image source={require('../assets/pf-icon.png')} />
+        <Image style={{ width: 30, height: 30 }} source={require('../assets/pf-icon.png')} />
       </View>
     </View>
   );
@@ -24,6 +29,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 50,
     paddingHorizontal: 10,
+    marginBottom: 10
   },
   leftElement: {
     flex: 1,
@@ -33,6 +39,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-end',
   },
+  menuIcon: {
+    width: 32,
+    height: 32,
+  }
 });
 
 export default Topbar;

@@ -1,4 +1,4 @@
 import { createContext } from "react";
-import VIEW from "../enum/CalendarType";
+import { Mode } from "react-native-big-calendar";
 
-export const CalendarContext = createContext(VIEW.SEVEN_DAY);
+export const CalendarContext = createContext<Mode>("week");
